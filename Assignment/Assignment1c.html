@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>assign 1 q3</title>
+        <style>
+            #box{
+                border:1px solid  red ;
+                width: 400px;
+                height:200px;
+            }
+            #image{
+                border:1px solid black ;
+                width: 200px;
+                height: 100px;
+                margin: 10px;
+
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+         <img src="Z:\assignment 1\Screenshot 2024-08-13 115951.png" id="image" draggable="true" ondragstart="drag(event)"/>
+
+         <script>
+            function allowDrop(event){
+                event.preventDefault();
+
+            }
+            function drop(event){
+                event.target.appendChild(document.getElementById("image"));
+            }
+            function drag(event)
+            {
+                event.dataTransfer("text",event.target.id);
+            }
+            
+         </script>
+    </body>
+</html>
